@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Nav, NavItem, NavLink } from 'reactstrap';
+import Logo from './images/better-professor-logo.png';
 import {
   Collapse,
   Navbar,
@@ -22,24 +23,21 @@ const Header = (props) => {
       <div>     
 
         <Navbar color="light" light expand="md">
-          <NavbarBrand to="/"> <h1>Better Professor</h1></NavbarBrand>
+          <NavbarBrand> <img src={Logo} height="50px"></img> Better Professor</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
             <NavItem>
-        <Link to="/">Home</Link>
+        <Link to="/" className="headerLinks">Home</Link>
         </NavItem>
         <NavItem>
-        <Link to="/about">About</Link>
+        <Link to="/about" className="headerLinks">About</Link>
         </NavItem>
         <NavItem>
-        <Link to="/contact">Contact</Link>
+        <Link to="/how" className="headerLinks">HowItWorks</Link>
         </NavItem>
         <NavItem>
-        <Link to="/how">HowItWorks</Link>
-        </NavItem>
-        <NavItem>
-        <Link to="/reviews">Reviews</Link>
+        <Link to="/reviews" className="headerLinks">Reviews</Link>
         </NavItem>
             </Nav>
             <NavbarText>Deadline Management App</NavbarText>
