@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import * as yup from 'yup';
-
 import axios from 'axios';
+import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+
 
 const formSchema = yup.object().shape({
     name: yup.string().required("Name is required"),
@@ -30,7 +31,7 @@ export default function MyForm (){
         password:"",
         terms: ""
     });
-    // Yup Validation
+    //Yup Validation
     const validate = e =>{
         let value = e.target.type==="checkbox"? e.target.checked:e.target.value;
         yup.reach(formSchema, e.target.name)
@@ -59,16 +60,12 @@ export default function MyForm (){
     const formSubmit = e =>{
         e.preventDefault();
         console.log("form submitted!");
-        axios.post("https://better-professor-web-app.herokuapp.com/api/auth/register", formState)
-        .then(response => {
-            console.log(response)
-            setUsers([
-            
-                //Changed response from console.log to instead go through Users
-                ...users,
-                formState
-            ])
-        })
+        axios.post("https://reqres.in/api/users", formState)
+        .then(response => setUsers([
+            //Changed response from console.log to instead go through Users
+            ...users,
+            formState
+        ]))
         .catch(error => console.log(error))
         setFormState({
             name: '',
@@ -91,39 +88,43 @@ export default function MyForm (){
                     </div>
                 </div>
             })}
-        <form onSubmit={formSubmit}
+        <Form onSubmit={formSubmit}
         >
-            <label htmlFor="name"><span className="fieldTitle">Name:</span>
-            <input id="name" type="text" name="name" placeholder="Please enter name" value={formState.name}
+            <Label htmlFor="name"><span className="fieldTitle">Name:</span>
+            <Input id="name" type="text" name="name" placeholder="Please enter name" value={formState.name}
                 onChange={changeHandler} />
                 {errorState.name.length>0?(
                 <p className="error">{errorState.name}</p>
             ) :null}
-             </label>
-
-            <label htmlFor="email"><span className="fieldTitle">Email:</span>
-            <input id="email" type="text" name="email" placeholder="Please enter email" value={formState.email} onChange={changeHandler} />
+             </Label>
+             <br></br>
+            <Label htmlFor="email"><span className="fieldTitle">Email:</span>
+            <Input id="email" type="text" name="email" placeholder="Please enter email" value={formState.email} onChange={changeHandler} />
             {errorState.email.length>0?(
                 <p className="error">{errorState.email}</p>
             ) :null}
-            </label>
-
-            <label htmlFor="password"><span className="fieldTitle">Password:</span>
-            <input id="password" type="text" name="password" placeholder="Please enter password" value={formState.password}
+            </Label>
+            <br></br>
+            <Label htmlFor="password"><span className="fieldTitle">Password:</span>
+            <Input id="password" type="text" name="password" placeholder="Please enter password" value={formState.password}
                 onChange={changeHandler} />
                 {errorState.password.length>0?(
                 <p className="error">{errorState.password}</p>
             ) :null}
-            </label>
-
-            <label htmlFor="terms"><span className="fieldTitle">Terms of Service</span>
-            <input id="terms" type="checkbox" name="terms" checked={formState.terms} onChange={changeHandler} />
+            </Label>
+            <br></br>
+            <Label htmlFor="terms"><span className="fieldTitle">Terms of Service</span><br></br>
+            <Input id="terms" type="checkbox" name="terms" checked={formState.terms} onChange={changeHandler} />
+            <br></br>
             {errorState.terms.length>0?(
                 <p className = "error">{errorState.terms}</p>
             ): null}
-            </label>
-            <button type="submit">Submit</button>
-        </form>
+            </Label>
+            <br></br>
+            <Button type="submit">Submit</Button>
+        </Form>
+
+
         {console.log(formState)}
        </div>
     )
