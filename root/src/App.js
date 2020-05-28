@@ -9,7 +9,6 @@ import HowItWorks from './components/HowItWorks';
 import Reviews from './components/Reviews';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Projects from './components/Projects.js';
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
       <Route path ="/about" component={About} />
       <Route path ="/how" component={HowItWorks} />
       <Route path ="/reviews" component={Reviews} />
-      <Route path ="/projects" component ={Projects} /> 
       <Footer />
     </div>
   );

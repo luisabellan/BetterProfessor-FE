@@ -87,7 +87,7 @@ export default function MyForm (){
                     <div id="onboardedUsers">
                     <h4>Name: {person.name}</h4>
                     <h4>Email: {person.email}</h4>
-                    <Button color="alert"><Link to="/projects">Click to View Projects</Link></Button>
+                    <Button color="alert"><Link to="/reviews">Click to View Projects</Link></Button>
                     </div>
                     </Alert>
                 </div>
