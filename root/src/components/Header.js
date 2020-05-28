@@ -22,7 +22,7 @@ const Header = (props) => {
       <div>     
 
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/"> <h1>Better Professor</h1></NavbarBrand>
+          <NavbarBrand to="/"> <h1>Better Professor</h1></NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -42,7 +42,7 @@ const Header = (props) => {
         <Link to="/reviews">Reviews</Link>
         </NavItem>
             </Nav>
-            <NavbarText>Making Projects Simple!</NavbarText>
+            <NavbarText>Deadline Management App</NavbarText>
           </Collapse>
         </Navbar>
       </div>

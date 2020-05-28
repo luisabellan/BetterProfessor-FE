@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
-import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Col, Row, Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
 
 
 const formSchema = yup.object().shape({
@@ -81,11 +81,13 @@ export default function MyForm (){
         <div id="formContainer">
              {users.map(person => {
                 return <div>
-                    <h1>User</h1>
+                        <Alert color="info">
+                    <h2>Successfully Registered</h2>
                     <div id="onboardedUsers">
-                    <h2>Name: {person.name}</h2>
-                    <h2>Email: {person.email}</h2>
+                    <h4>Name: {person.name}</h4>
+                    <h4>Email: {person.email}</h4>
                     </div>
+                    </Alert>
                 </div>
             })}
         <Form onSubmit={formSubmit}
