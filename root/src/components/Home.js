@@ -16,7 +16,7 @@ const Home = (props) => {
         <hr className="my-2" />
         <p>Click below to get started!</p>
         <p className="lead">
-        <Button color="info"><Link to="/form">Sign Up</Link></Button>{' '}
+        <Button color="info"><Link to="/form" className="homeButton">Sign Up</Link></Button>{' '}
         </p>
       </Jumbotron>
             

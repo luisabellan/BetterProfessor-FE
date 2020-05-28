@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
 import { Col, Row, Button, Form, FormGroup, Label, Input, Alert } from 'reactstrap';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 const formSchema = yup.object().shape({
@@ -86,6 +87,7 @@ export default function MyForm (){
                     <div id="onboardedUsers">
                     <h4>Name: {person.name}</h4>
                     <h4>Email: {person.email}</h4>
+                    <Button color="alert"><Link to="/projects">Click to View Projects</Link></Button>
                     </div>
                     </Alert>
                 </div>
