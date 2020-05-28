@@ -11,7 +11,7 @@ const formSchema = yup.object().shape({
 })
 
 
-export default function Form (){
+export default function MyForm (){
     //Set State of Users to display
     const [users, setUsers] = useState([])
     //Set Form State
