@@ -29,6 +29,9 @@ function Navigation() {
       <Link className={classes.link} to="/reminders">
         Reminder
       </Link>
+      <Link className={classes.link} to="/form">
+        Reviews
+      </Link>
       <Link className={classes.link} to="/" onClick={handleSignout}>
         Sign out
       </Link>
