@@ -1,3 +1,24 @@
+
+# Better Professor
+
+Test users:
+
+   {
+          username: "patrick",
+          password: "abc123",
+          name: "Patrick O'Connor",
+          role: "mentor",
+          email_address: "pat@gmail.com",
+        },
+        {
+          username: "rick",
+          password: "abc123",
+          name: "Richard Coleman",
+          role: "student",
+          email_address: "rick@gmail.com",
+        },
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
