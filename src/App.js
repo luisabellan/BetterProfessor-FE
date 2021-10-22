@@ -8,6 +8,8 @@ import Login from "./components/user_MosharrafMusa/UserLoginPage";
 import Register from "./components/user_MosharrafMusa/UserRegisterPage";
 import StudentsPage from "./components/student_MosharrafMusa/StudentsPage";
 import RemindersPage from "./components/reminder_MosharrafMusa/RemindersPage";
+import dotenv from "dotenv";
+dotenv.config();
 
 const useStyles = makeStyles({
   root: {
